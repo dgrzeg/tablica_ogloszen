@@ -1,9 +1,12 @@
 <template>
-  <div>{{ ads[0].title }}</div>
+  <div>
+    <AdList :ads="ads" />
+  </div>
 </template>
 
 <script lang="ts" setup>
 import Ad from '@/types/Ad'
+import AdList from './components/AdList.vue'
 import { ref } from '@vue/reactivity'
 
 const ads = ref<Ad[]>([
