@@ -1,7 +1,6 @@
 <template>
   <div class="ad-list">
-    <p>Posortowane po - {{ order }}</p>
-    <ul>
+    <transition-group name="list" tag="ul">
       <li v-for="ad in orderAds" :key="ad.id">
         <h2>{{ ad.title }} - {{ ad.location }}</h2>
         <div class="price">
@@ -13,7 +12,7 @@
           sapiente.
         </div>
       </li>
-    </ul>
+    </transition-group>
   </div>
 </template>
 
@@ -64,5 +63,8 @@ const orderAds = computed(() => {
   color: #6f5851;
   font-weight: bold;
   margin: 10px 4px;
+}
+.list-move {
+  transition: all 1s;
 }
 </style>

@@ -1,6 +1,9 @@
 <template>
   <div>
     <header>
+      <div class="title">
+        <h1>Tablica ogłoszeń</h1>
+      </div>
       <div class="order">
         <button @click="handleOrder('title')">sortuj po tytule</button>
         <button @click="handleOrder('price')">sortuj po cenie</button>
@@ -60,18 +63,23 @@ const handleOrder = (orderParam: Order) => {
 <style lang="scss">
 header {
   text-align: center;
-}
-header .order {
-  margin-top: 20px;
-}
-button {
-  margin: 0 10px;
-  color: #1195c9;
-  border: 3px solid #1195c9;
-  background: #d5f0ff;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
+
+  & .title h1 {
+    letter-spacing: 4px;
+  }
+
+  & .order {
+    margin-top: 20px;
+  }
+  & button {
+    margin: 0 10px;
+    color: #1195c9;
+    border: 3px solid #1195c9;
+    background: #d5f0ff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
 }
 </style>
